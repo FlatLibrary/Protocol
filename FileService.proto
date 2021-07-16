@@ -4,18 +4,15 @@ option java_outer_classname = "FileService";
 
 package service;
 
-// The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+service FileDataAPI {
+  rpc fileList(File) returns (FileList) {}
 }
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
+message File {
+  bool isFolder = 1;
+  string path = 2;
 }
 
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
+message FileList {
+  repeated File files = 1;
 }
