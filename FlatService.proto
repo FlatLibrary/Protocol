@@ -1,0 +1,30 @@
+syntax = "proto3";
+option java_package = "com.flat.library.service";
+option java_outer_classname = "FlatService";
+
+import "google/protobuf/empty.proto";
+
+package service;
+
+service Storage {
+  rpc fileList(File) returns (FileList) {}
+}
+
+message File {
+  bool isFolder = 1;
+  string path = 2;
+}
+
+message FileList {
+  repeated File files = 1;
+}
+
+
+service Common {
+  rpc description(google.protobuf.Empty) returns (ServerDescription) {};
+}
+
+message ServerDescription {
+  string version = 1;
+  string name = 2;
+}
