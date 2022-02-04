@@ -1,9 +1,6 @@
 syntax = "proto3";
 option java_package = "com.flat.library.service";
-option java_outer_classname = "FlatService";
-
-import "google/protobuf/empty.proto";
-
+option java_outer_classname = "FlatLibrary";
 package FlatLibrary;
 
 message ServerInfo {
